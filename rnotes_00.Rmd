@@ -27,8 +27,45 @@ while (tabcount<=maxrange) {
 
 ```
 
+__Ex.2__ Given any number n (other than zero) check if it is even.
 
-__Ex.2__ Given any number n print 10 subsequent numbers and finally print the sum.
+```{r}
+
+mynum = as.integer(readline(prompt = "Enter the number:"))
+
+if(mynum == 0) {
+  print("Enter a non-zero integer!")
+} else {
+  
+  if(mynum %% 2 == 0) {
+     print("Even!")
+  } else {
+    print("Odd!")
+  }
+}
+
+```
+
+__Ex.3__ Given any three digit number n, find the unit, tens and hundreds place value.
+
+```{r}
+
+mynum.3= as.integer(readline(prompt = "Enter any 3-digit number:"))
+
+mynum.hundreds = as.integer(mynum.3/100)
+cat("Hundreds place value:", mynum.hundreds, "\n")
+
+mynum.tensnum = mynum.3 - mynum.hundreds*100
+mynum.tens = as.integer(mynum.tensnum/10)
+cat("Tens place value:", mynum.tens, "\n")
+
+mynum.ones = as.integer((mynum.tensnum - mynum.tens*10))
+cat("Ones place value:", mynum.ones, "\n")
+
+```
+
+
+__Ex.4__ Given any number n print 10 subsequent numbers and finally print the sum.
 <br>
 Given, n = 1; print - 1 2 3 4 5 6 7 8 9 10 and <b>Sum</b> = 55
 
@@ -54,7 +91,7 @@ while (count < 10) {
 cat("sum =", result)
 
 ```
-__Ex.3__ Print the Fibonacci sequence upto 10 terms and print the value of the golden ratio.
+__Ex.5__ Print the Fibonacci sequence upto 10 terms and print the value of the golden ratio.
 Fibonacci Series is given as $F(n) = 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...$
 <br>
 where, t$_n$ = t$_{n-1}$ + t$_{n-2}$
