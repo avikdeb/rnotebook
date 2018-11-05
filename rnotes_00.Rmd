@@ -1,0 +1,87 @@
+---
+title: "R Cheatsheet - Preliminaries"
+output: html_notebook
+---
+Author: Avik Deb (avikdeb@gmail.com)
+
+05 November, 2018
+
+<br>
+
+### Preliminary Exercises
+
+
+__Ex.1__ Given any number n print 10 subsequent numbers and finally print the sum.
+<br>
+Given, n = 1; print - 1 2 3 4 5 6 7 8 9 10 and <b>Sum</b> = 55
+
+```{r}
+
+# Use readline to read from console - it will be read as string
+print(int <- readline(prompt = "Enter first number: "))
+
+# Converting the string int to integer num
+num <- as.integer(int)
+count<-0
+result<-0
+
+while (count < 10) {
+  
+  cat("",num)
+  result = result + num
+  num = num + 1
+  count = count + 1
+  
+}
+
+cat("sum =", result)
+
+```
+__Ex.2__ Print the Fibonacci sequence upto 10 terms and print the value of the golden ratio.
+Fibonacci Series is given as $F(n) = 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...$
+<br>
+where, t$_n$ = t$_{n-1}$ + t$_{n-2}$
+
+```{r}
+
+# take input from the user
+nterms = as.integer(readline(prompt="How many terms? "))
+
+# first two terms
+n1 = 0
+n2 = 1
+count = 2
+
+# check if the number of terms is valid
+if(nterms <= 0) {
+  print("Plese enter a positive integer")
+} else {
+  if(nterms == 1) {
+    print("Fibonacci sequence:")
+    print(n1)
+  } else {
+    print("Fibonacci sequence:")
+    print(n1)
+    print(n2)
+    while(count < nterms) {
+      nth = n1 + n2
+      print(nth)
+      
+      # update values
+      n1 = n2
+      n2 = nth
+      count = count + 1
+    }
+  }
+}
+
+```
+
+
+<b>NOTE:</b> 
+
+Add a new chunk by clicking the *Insert R* button on the toolbar.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
