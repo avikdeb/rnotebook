@@ -1,10 +1,10 @@
 ---
-title: "R Cheatsheet - Preliminaries"
+title: "R Worksheet - Preliminaries"
 output: html_notebook
 ---
 Author: Avik Deb (avikdeb@gmail.com)
 
-05 November, 2018
+06 November, 2018
 
 <br>
 
