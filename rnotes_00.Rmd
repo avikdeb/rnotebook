@@ -91,6 +91,22 @@ while (count < 10) {
 cat("sum =", result)
 
 ```
+__Ex.4a__ Given any number n, count and print in reverse direction upto 3,2,1. E.g. If n=10 print: 10 9 8 7 6 5 4 3 2 1
+
+```{r}
+
+num.start = as.integer(readline(prompt="Enter the start number: "))
+
+while(num.start>0) {
+  
+  print(num.start)
+  num.start = num.start - 1
+}
+
+```
+
+
+
 __Ex.5__ Print the Fibonacci sequence upto 10 terms and print the value of the golden ratio.
 Fibonacci Series is given as $F(n) = 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...$
 <br>
