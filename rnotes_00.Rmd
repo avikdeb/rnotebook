@@ -147,3 +147,33 @@ if(nterms <= 0) {
 
 ```
 
+__Ex.6__ Given any positive integer (or zero) find the factorial of the number.
+<br>
+Factorial is given as $n! = n(n-1)(n-2)(n-3)...3.2.1$ and $0! = 1$ by definition.
+
+```{r}
+
+# This is a simple way of getting factorial - later we will show a better alternative way using recursive fuction in note-03
+
+num.fact = as.integer(readline(prompt="Enter the number: "))
+
+if(num.fact==0) {
+  
+  cat("Factorial Result = 1")
+} else {
+  
+    fact = 1
+    while(num.fact>0) {
+  
+      fact = fact*num.fact
+      num.fact = num.fact - 1
+      
+    }
+    
+    cat("Factorial Result = ", fact)
+  
+}
+
+
+```
+
