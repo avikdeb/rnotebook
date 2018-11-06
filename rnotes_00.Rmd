@@ -105,7 +105,32 @@ while(num.start>0) {
 
 ```
 
+__Ex.4b__ Read the numbers from console and finally print the arithmatic mean.
 
+```{r}
+
+avg.sum = 0
+avg.freq = 1
+user.input = ""
+
+while(user.input!="done") {
+  
+  user.input = readline(prompt = "Enter the number:")
+  
+  if(user.input=="done") {
+    break;
+  }
+  
+  user.input.int = as.integer(user.input)
+  avg.sum = avg.sum + user.input.int
+  avg.freq = avg.freq + 1
+  avg = avg.sum/(avg.freq-1)
+}
+
+cat("Average =",avg)
+
+
+```
 
 __Ex.5__ Print the Fibonacci sequence upto 10 terms and print the value of the golden ratio.
 Fibonacci Series is given as $F(n) = 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...$
