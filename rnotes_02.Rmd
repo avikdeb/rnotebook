@@ -1,40 +1,95 @@
 ---
-title: "R Cheatsheet 2"
+title: "R Workbook 2"
 output: html_notebook
 ---
 Author: Avik Deb (avikdeb@gmail.com)
 
-25 October, 2018
+7 November, 2018
 
 <br>
 
-### Day 2
+### Day 3
 
 <br>
 
-#### Matrices, Factors and Arrays
-
-A matrix is a collection of data elements arranged in a 2-D rectangular layout. They contain elements of same atomic type. Syntax for creating a matrix: matrix(data, nrow, ncol, byrow, dimnames)
+#### Miscellaneous Problems
 
 <br>
 
-<b>Commonly used R data structures:</b>
+R provides only very basics of string handling - if you want a very versatile and robust framework better look for Python. However, no computer language is complete without offering anything on string - so does R. Below examples will show some basic string manipulations (slicing and dicing) done using R. 
+<br>
 
-1. Vectors - Contains elements of same type. c() function is often used to create vectors. Index starts at 1.
-2. Lists - A generic vector containing elements of different type. Index starts at 1. Lists can be merged.
-3. Matrices - Collection of data elements arranged in 2D rectangular layout. Contains element of same atomic type.
-4. Arrays - Similar to matrices but can store data in ND. They can store data of same type only.
-5. Factors - Used for fields that takes only pre-defined, finite number of values or categorical data. It store data as levels. It takes vectors as inputs.
-6. Data Frames - Used for storing data tables. It is a list of vectors of equal length.
+<b>NOTE</b> stringr is an important library in R. For more, read - https://rpubs.com/iPhuoc/stringr_manipulation
 
-In the below section we will explore each one of them.
-
-<b>Ex.1</b> Create a vector of 5 integers and fetch the 3rd, 4th and 5th element. Create another vector of 5 integers. Combine them to a new vector. Print the element wise sum and product of the two vectors. Create another vector of elements, each increases by a step of 0.2 i.e. 5.0 5.2 5.3 ... upto 7.0. Create a vector of strings of 4 Cities and sort them alphabetically. Give an example showing character vector as index. 
+<b>Ex.1</b> Read the string 'CATACLISTM'and print the number of characters in it - use paste() function to concatenate Strings. Get another string from it as 'DOGACLISM'. Now, in the original string replace C's with D's i.e. convert the 'input string 'CATACLISM' into 'DATADLISM'. Count the number of vowels in the original string.
 
 ```{r}
 
+str.1 = "CATACLISM"
+
+# Doing substring replacement
+
+print(sub("CAT", "DOG", str.1))
+
+# Part 1: Note how we converted integer into String using toString() function 
+# and then concatenated with a string with paste() function
+
+print(paste("Number of characters in String",str.1,":", toString(nchar(str.1))))
+
+# We need to replace C with D - use chartr() function
+library(stringr)
+str.2 <- chartr("C", "D", str.1)
+print(str.2)
+
+# Detecting the matches - using stringr
+cat("-----------------------------------------------------", "\n")
+
+# Initializing the counts
+count.a = 0
+count.e = 0
+count.i = 0
+count.o = 0
+count.u = 0
+
+if(str_detect(str.1, "a") || str_detect(str.1, "A")) {
+  
+  count.a = str_count(str.1, "A")+str_count(str.1,"a")
+  cat("occurance of A/a:",count.a, "\n")  
+}
+if(str_detect(str.1, "e") || str_detect(str.1, "E")) {
+  
+  count.e = str_count(str.1, "E")+str_count(str.1,"e")
+  cat("occurance of E/e:", count.e, "\n")  
+}
+if(str_detect(str.1, "i") || str_detect(str.1, "I")) {
+  
+  count.i = str_count(str.1, "I")+str_count(str.1,"i")
+  cat("occurance of I/i:", count.i, "\n")  
+}
+if(str_detect(str.1, "o") || str_detect(str.1, "O")) {
+  
+  count.o = str_count(str.1, "O")+str_count(str.1,"o")
+  cat("occurance of O/o:",count.o, "\n")  
+}
+if(str_detect(str.1, "u") || str_detect(str.1, "U")) {
+  
+  count.u = str_count(str.1, "U")+str_count(str.1,"u")
+  cat("occurance of U/u:", count.u, "\n")  
+}
+
+cat("Total number of vowels in string", str.1, "=", count.a+count.e+count.i+count.o+count.u)
+
+# Stripping / splitting and reversing the string - strsplit returns a list
+str.splitted <- strsplit(str.1, NULL)[[1]]
+str.splitted[1:length(str.splitted)]
+
+# Getting the vector in reverse - concatenating and then printing
+rev(str.splitted)
+cat(paste(rev(str.splitted)))
 
 ```
+
+<br>
 <b>Ex.2</b> Create a vector of 5 integers and fetch the 3rd, 4th and 5th element. Create another vector of 5 integers. Combine them to a new vector. Print the element wise sum and product of the two vectors. Create another vector of elements, each increases by a step of 0.2 i.e. 5.0 5.2 5.3 ... upto 7.0. Create a vector of strings of 4 Cities and sort them alphabetically. Give an example showing character vector as index.
 
 ```{r}
