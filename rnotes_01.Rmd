@@ -73,6 +73,7 @@ names(name.vector)
 name.vector["Second"]
 
 ```
+
 <b>Ex.2</b> Create a vector of 5 integers and fetch the 3rd, 4th and 5th element. Create another vector of 5 integers. Combine them to a new vector. Print the element wise sum and product of the two vectors. Create another vector of elements, each increases by a step of 0.2 i.e. 5.0 5.2 5.3 ... upto 7.0. Create a vector of strings of 4 Cities and sort them alphabetically. Give an example showing character vector as index.
 
 ```{r}
@@ -93,11 +94,21 @@ list.merged
 
 ```
 
+<b>Examples on Matrix</b>
+<b>Ex.3a</b> Create a matrix with 12 elements (may be 1-12 numbers) arranged by row
+<b>Ex.3b</b> Create a matrix with 12 elements (may be 1-12 numbers) arranged by column (here the row becomes column)
+<b>Ex.3a</b> Create a matrix with 12 elements (may be 1-12 numbers) arranged in 4 rows and show the column and row names
 
-<b>NOTE:</b> 
+```{r}
 
-Add a new chunk by clicking the *Insert R* button on the toolbar.
+matrix.1 <- matrix(c(1:12), nrow = 4, byrow = TRUE)
+matrix.2 <- matrix(c(1:12), nrow = 4, byrow = FALSE)
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+rnames = c("r1", "r2", "r3", "r4")
+cnames = c("c1", "c2", "c3")
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+matrix.3 <- matrix(c(1:12), nrow = 4, byrow = TRUE, dimnames = list(rnames, cnames))
+matrix.3
+
+```
+
