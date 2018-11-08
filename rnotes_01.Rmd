@@ -96,13 +96,15 @@ list.merged
 
 <b>Examples on Matrix</b>
 <b>Ex.3a</b> Create a matrix with 12 elements (may be 1-12 numbers) arranged by row
-<b>Ex.3b</b> Create a matrix with 12 elements (may be 1-12 numbers) arranged by column (here the row becomes column)
+<b>Ex.3b</b> Create a matrix with 12 elements (may be 1-12 numbers) arranged by column
 <b>Ex.3a</b> Create a matrix with 12 elements (may be 1-12 numbers) arranged in 4 rows and show the column and row names
 
 ```{r}
 
 matrix.1 <- matrix(c(1:12), nrow = 4, byrow = TRUE)
+matrix.1
 matrix.2 <- matrix(c(1:12), nrow = 4, byrow = FALSE)
+matrix.2
 
 rnames = c("r1", "r2", "r3", "r4")
 cnames = c("c1", "c2", "c3")
