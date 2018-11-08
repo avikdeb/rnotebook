@@ -95,9 +95,10 @@ list.merged
 ```
 
 <b>Examples on Matrix</b>
-<b>Ex.3a</b> Create a matrix with 12 elements (may be 1-12 numbers) arranged by row
-<b>Ex.3b</b> Create a matrix with 12 elements (may be 1-12 numbers) arranged by column
-<b>Ex.3a</b> Create a matrix with 12 elements (may be 1-12 numbers) arranged in 4 rows and show the column and row names
+
+* Ex.3a - Create a matrix with 12 elements (may be 1-12 numbers) arranged by row
+* Ex.3b - Create a matrix with 12 elements (may be 1-12 numbers) arranged by column
+* Ex.3c - Create a matrix with 12 elements (may be 1-12 numbers) arranged in 4 rows and show the column and row names
 
 ```{r}
 
