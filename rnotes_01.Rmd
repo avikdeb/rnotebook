@@ -1,5 +1,5 @@
 ---
-title: "R Cheatsheet 1"
+title: "R Workbook 1"
 output: html_notebook
 ---
 Author: Avik Deb (avikdeb@gmail.com)
@@ -111,6 +111,55 @@ cnames = c("c1", "c2", "c3")
 
 matrix.3 <- matrix(c(1:12), nrow = 4, byrow = TRUE, dimnames = list(rnames, cnames))
 matrix.3
+
+```
+
+<b>Ex. 4</b> Retrieving / Accessing values from matrix:
+
+* Get the element of 2nd row, 3rd column
+* Get the entire 2nd row
+* Get the entire 3rd column
+* Get the 1st and 3rd columns
+* Get the 3rd and 2nd rows
+* Get the 1st & 2nd row and 2nd & 3rd column
+* Get all rows except 1st
+* Replace the value at 2R:2C with 100
+
+
+```{r}
+
+# We will operate on matrix.1 in above example
+
+cat("The matrix:", "\n")
+cat("--------------------------", "\n")
+matrix.1
+cat("--------------------------", "\n")
+
+# Element of R2/C3
+matrix.1[2,3]
+
+# Entire R2
+matrix.1[2,]
+
+# Entire C3
+matrix.1[,3]
+
+# C1 & C3
+matrix.1[,c(1,3)]
+
+# R3 & R2
+matrix.1[c(3,2),]
+
+# R1 & R2 and C2 & C3
+matrix.1[c(1,2), c(2,3)]
+
+# All rows except R1
+matrix.1[-1]
+
+# Replace the value at 2R,2C with 100 and print
+matrix.1[2,2] <- 100
+matrix.1
+
 
 ```
 
