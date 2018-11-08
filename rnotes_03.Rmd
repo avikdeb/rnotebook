@@ -1,10 +1,10 @@
 ---
-title: "R Cheatsheet 3"
+title: "R Workbook 3"
 output: html_notebook
 ---
 Author: Avik Deb (avikdeb@gmail.com)
 
-26 October, 2018
+10 November, 2018
 
 <br>
 
