@@ -115,7 +115,7 @@ matrix.3
 
 ```
 
-<b>Ex. 4</b> Retrieving / Accessing values from matrix:
+<b>Ex. 4</b> Retrieving / Accessing values from matrix.1:
 
 * Get the element of 2nd row, 3rd column
 * Get the entire 2nd row
