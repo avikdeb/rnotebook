@@ -157,9 +157,39 @@ matrix.1[c(1,2), c(2,3)]
 # All rows except R1
 matrix.1[-1]
 
+# Get a matrix stripped of R1
+matrix.1[c(-1),]
+
 # Replace the value at 2R,2C with 100 and print
 matrix.1[2,2] <- 100
 matrix.1
+
+
+```
+
+<b>Arrays:</b> Array can store data in more than two dimensions. Array of dimension (2,4,5) means we have 5 matrices each with 2 rows and 4 columns. It takes vectors as input. The function dim() is used to specify the dimension.
+
+<br>
+
+* Create an array with 3 matrices with some arbitrary input vectors
+
+```{r}
+
+# Input vectors
+v.in.1 = c(1, 2, 3)
+v.in.2 = c(10, 20, 30, 40, 50, 60)
+
+# Giving column names, row names and matrix names
+column.names <- c("COL1", "COL2", "COL3")
+row.names <- c("ROW1", "ROW2", "ROW3")
+matrix.names <- c("MATRIX1", "MATRIX2", "MATRIX3")
+
+# Creating the array with all names defined
+
+a.array.1 <- array(c(v.in.1, v.in.2), dim = c(3, 3, 3), dimnames = list(row.names, column.names, matrix.names))
+
+# The array:
+a.array.1
 
 
 ```
