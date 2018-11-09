@@ -72,4 +72,15 @@ student.data <- read.csv("student.csv")
 
 print(student.data)
 
+# Get the highest score i.e. a specific data
+highest.score <- max(student.data$total_score)
+print(highest.score)
+
+# Get the full record of highest score
+ret.val <- subset(student.data, total_score == max(total_score))
+print(ret.val)
+
+
 ```
+
+
