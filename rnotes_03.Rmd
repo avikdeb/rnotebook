@@ -12,41 +12,56 @@ Author: Avik Deb (avikdeb@gmail.com)
 
 <br>
 
-#### Data Frames
+#### Factors, Missing Values and Data Frames
 
-The fundamentals of <b>R Programming Language</b> is discussed and illustrated in this Notebook.
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+<b>Factors</b>
 
-The chunk is denoted with notation starting with '''{r} and ending with ''' - The code will remain in between.
+Factors are used to represent categorical data - can be ordered or unordered. Factor => Integer vector where each has a label. Use factor() fuction to create factors. Factors are automatically created when we read a dataset using fuction like read.table() 
 
+<b>Ex.1</b> Create a factor with some categorical data (say, yes/no or male/female). Show them in a table.
+
+```{r}
+
+response.fact <- factor(c("yes", "yes", "no", "yes", "no"))
+response.fact
+
+# Get it in a table - number of yes and no is displayed
+table(response.fact)
+
+```
 <br>
 
-<b>Commonly used R data structures:</b>
+<b>Missing Values - </b> Missing values are denoted by NA or NaN for undefined mathematical operations. Below functions are used to test such scenarios:
 
-1. Vectors - Contains elements of same type. c() function is often used to create vectors. Index starts at 1.
-2. Lists - A generic vector containing elements of different type. Index starts at 1. Lists can be merged.
-3. Matrices - Collection of data elements arranged in 2D rectangular layout. Contains element of same atomic type.
-4. Arrays - Similar to matrices but can store data in ND. They can store data of same type only.
-5. Factors - Used for fields that takes only pre-defined, finite number of values or categorical data. It store data as levels. It takes vectors as inputs.
-6. Data Frames - Used for storing data tables. It is a list of vectors of equal length.
-
-In the below section we will explore each one of them.
-
-<b>Ex.1</b> Create a vector of 5 integers and fetch the 3rd, 4th and 5th element. Create another vector of 5 integers. Combine them to a new vector. Print the element wise sum and product of the two vectors. Create another vector of elements, each increases by a step of 0.2 i.e. 5.0 5.2 5.3 ... upto 7.0. Create a vector of strings of 4 Cities and sort them alphabetically. Give an example showing character vector as index. 
+*is.na()* - Used to test objects if they are NA
+*is.nan()* - Used to test for NaN
+*NA values have a class also - integer NA, character NA etc*
+*NaN is NA but reverse is not true*
 
 ```{r}
 
+# Test the missing value
 
-```
-<b>Ex.2</b> Create a vector of 5 integers and fetch the 3rd, 4th and 5th element. Create another vector of 5 integers. Combine them to a new vector. Print the element wise sum and product of the two vectors. Create another vector of elements, each increases by a step of 0.2 i.e. 5.0 5.2 5.3 ... upto 7.0. Create a vector of strings of 4 Cities and sort them alphabetically. Give an example showing character vector as index.
+test.v <- c(1, 2, NA, 4, NaN, 6, 7)
 
-```{r}
+# T for both NA and NaN
+is.na(test.v)
 
+# T for only NaN
+is.nan(test.v)
 
 
 ```
 
 
-<b>NOTE:</b> 
+<b>Data Frames - </b>Used to store tabular data in R. Package dplyr is very useful while working with data frames. Data frames are special types of list where every element of the list has to have the same length. Each element of the list => column and the length of each element of the list is the number of rows. Unlike matrices, data frames can store different classes of objects in each column. Data frames are usually created by reading in a dataset using the read.table() or read.csv() or they can be created explicitly with the data.frame() function. Data frames can be converted to a matrix by data.matrix(). 
 
-To be written.
+```{r}
+
+frame.1 <- data.frame(serial = 1:5, occupancy = c(T, T, F, F, T), gender = c("M", "F", "F", "F", "M"), city = c("Kolkata", "Mumbai", "Delhi", "Chennai", "Bengaluru" ), connectivity = c("air", "air", "air", "road", "rail"))
+
+frame.1
+
+
+```
+

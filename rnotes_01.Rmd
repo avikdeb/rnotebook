@@ -74,7 +74,11 @@ name.vector["Second"]
 
 ```
 
-<b>Ex.2</b> Create a vector of 5 integers and fetch the 3rd, 4th and 5th element. Create another vector of 5 integers. Combine them to a new vector. Print the element wise sum and product of the two vectors. Create another vector of elements, each increases by a step of 0.2 i.e. 5.0 5.2 5.3 ... upto 7.0. Create a vector of strings of 4 Cities and sort them alphabetically. Give an example showing character vector as index.
+<b>Lists</b>
+<br>
+List is very important. They can hold different data types. A List is a special type of vector. Below example shows some important features of list.
+<br>
+<b>Ex.2</b> Create a list and get the vectors / elements from it. Create another list. Merge them. Sort the list.
 
 ```{r}
 
