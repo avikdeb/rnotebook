@@ -1,0 +1,75 @@
+---
+title: "R Workbook 4"
+output: html_notebook
+---
+Author: Avik Deb (avikdeb@gmail.com)
+
+10 November, 2018
+
+<br>
+
+### Day 3
+
+<br>
+
+#### Graphical Works
+
+<b>Factors</b>
+
+Factors are used to represent categorical data - can be ordered or unordered. Factor => Integer vector where each has a label. Use factor() fuction to create factors. Factors are automatically created when we read a dataset using fuction like read.table() 
+
+<b>Ex.1</b> Create a factor with some categorical data (say, yes/no or male/female). Show them in a table.
+
+```{r}
+
+response.fact <- factor(c("yes", "yes", "no", "yes", "no"))
+response.fact
+
+# Get it in a table - number of yes and no is displayed
+table(response.fact)
+
+```
+<br>
+
+<b>Missing Values - </b> Missing values are denoted by NA or NaN for undefined mathematical operations. Below functions are used to test such scenarios:
+
+*is.na()* - Used to test objects if they are NA
+*is.nan()* - Used to test for NaN
+*NA values have a class also - integer NA, character NA etc*
+*NaN is NA but reverse is not true*
+
+```{r}
+
+# Test the missing value
+
+test.v <- c(1, 2, NA, 4, NaN, 6, 7)
+
+# T for both NA and NaN
+is.na(test.v)
+
+# T for only NaN
+is.nan(test.v)
+
+
+```
+
+
+<b>Data Frames - </b>Used to store tabular data in R. Package dplyr is very useful while working with data frames. Data frames are special types of list where every element of the list has to have the same length. Each element of the list => column and the length of each element of the list is the number of rows. Unlike matrices, data frames can store different classes of objects in each column. Data frames are usually created by reading in a dataset using the read.table() or read.csv() or they can be created explicitly with the data.frame() function. Data frames can be converted to a matrix by data.matrix(). 
+
+```{r}
+
+frame.1 <- data.frame(serial = 1:5, occupancy = c(T, T, F, F, T), gender = c("M", "F", "F", "F", "M"), city = c("Kolkata", "Mumbai", "Delhi", "Chennai", "Bengaluru" ), connectivity = c("air", "air", "air", "road", "rail"))
+
+frame.1
+
+
+```
+
+<b>Exercise - </b> Read data from a CSV file - student.csv
+```{r}
+
+student.data <- read.csv("student.csv")
+
+print(student.data)
+
+```
