@@ -36,7 +36,7 @@ barplot(max.temp, main = "Max Temperature Variation Over a Week", xlab = "Days",
 ```
 <br>
 
-<b>TBD - </b> Missing values are denoted by NA or NaN for undefined mathematical operations. Below functions are used to test such scenarios:
+<b>Ex.2 - </b>
 
 
 

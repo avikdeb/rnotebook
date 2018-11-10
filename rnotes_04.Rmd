@@ -87,4 +87,17 @@ best.attend.5
 ```
 
 <br>
-<b>Aggregating Data - </b>
+<b>Plot - </b>Print a barplot taking inputs from the student.csv file - student roll number vs. absent of class 6
+
+
+```{r}
+
+absent.data <- student.data$days_absent
+#barplot(absent.data.6)
+
+absent.dataf.6 <- subset(student.data, days_absent & class == 6)
+absent.dataf.6
+barplot(absent.dataf.6$days_absent, main = "Absent Data for Class 6", xlab = "Roll Number", ylab = "Number of days absent", names.arg = absent.dataf.6$roll_number)
+
+
+```
