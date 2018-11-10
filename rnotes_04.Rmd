@@ -8,11 +8,11 @@ Author: Avik Deb (avikdeb@gmail.com)
 
 <br>
 
-### Day 3
+### Day 4
 
 <br>
 
-#### Graphical Works
+#### Working with Data Frames
 
 <b>Factors</b>
 
@@ -65,21 +65,24 @@ frame.1
 
 ```
 
-<b>Exercise - </b> Read data from a CSV file - student.csv
+<b>Exercise - </b> Read data from a CSV file - student.csv. Print the highest score and show the full record for the student who got the highest score. Show the students of class 5 with best attendance ( meaning no. of days has to be minimum in collection)
 ```{r}
 
 student.data <- read.csv("student.csv")
 
 print(student.data)
 
-# Get the highest score i.e. a specific data
+# Getting the highest score i.e. a specific data
 highest.score <- max(student.data$total_score)
 print(highest.score)
 
-# Get the full record of highest score
+# Getting the full record of highest score
 ret.val <- subset(student.data, total_score == max(total_score))
 print(ret.val)
 
+# Getting the best attendance in class 5
+best.attend.5 <- subset(student.data, days_absent == min(days_absent) & class == 5)
+best.attend.5
 
 ```
 
