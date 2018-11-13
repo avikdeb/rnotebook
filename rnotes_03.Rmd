@@ -36,27 +36,8 @@ barplot(max.temp, main = "Max Temperature Variation Over a Week", xlab = "Days",
 dev.off()
 
 ```
-<br>
-
-<b>Ex.2 - </b>
 
 
+<b>NOTE: </b> More examples are given in Notebook 4
 
-```{r}
-
-# Test the missing value
-
-
-
-```
-
-
-<b>TBD - </b>Used to store tabular data in R. Package dplyr is very useful while working with data frames. Data frames are 
-
-
-```{r}
-
-
-
-```
 
