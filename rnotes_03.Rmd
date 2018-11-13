@@ -26,12 +26,14 @@ max.temp <- c(22, 24, 25, 25, 26, 24, 27)
 # Below is just basic - keep it commented once understood - we will use the detail one
 # barplot(max.temp)
 
+# Provide a name to the chart and save the file as image
+png("temp_chart.png")
+
 # Below is the detail one - use it and keep this as uncommented
 barplot(max.temp, main = "Max Temperature Variation Over a Week", xlab = "Days", ylab = "Max Temperature", names.arg = c("Mon", "Tue", "Wed", "Thu","Fri", "Sat", "Sun"), col = "#CEE95F", border = "red")
 
-# Provide a name to the chart and save the file as image
-#png("temp_chart.png")
-
+# Save the file
+dev.off()
 
 ```
 <br>

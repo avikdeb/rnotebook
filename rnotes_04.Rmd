@@ -97,7 +97,29 @@ absent.data <- student.data$days_absent
 
 absent.dataf.6 <- subset(student.data, days_absent & class == 6)
 absent.dataf.6
-barplot(absent.dataf.6$days_absent, main = "Absent Data for Class 6", xlab = "Roll Number", ylab = "Number of days absent", names.arg = absent.dataf.6$roll_number)
+barplot(absent.dataf.6$days_absent, main = "Absent Data for Class 6", xlab = "Roll Number", ylab = "Number of days absent", names.arg = c(absent.dataf.6$roll_number))
 
 
 ```
+
+<br>
+<b>Plot - </b>Print the above plot horizontally. Hint: use horiz = TRUE in parameter
+```{r}
+
+barplot(absent.dataf.6$days_absent, main = "Absent Data for Class 6", xlab = "Number of days absent", ylab = "Roll Number", names.arg = c(absent.dataf.6$roll_number), horiz = TRUE)
+
+```
+
+<br>
+<b>Plot - </b>Plot a histogram of wages of labourers - 400, 700, 200, 700, 400, 600, 500, 400, 500, 600, 700, 300, 600, 700, 400, 300). This will plot the wages of the workers and their frequency.
+
+```{r}
+
+wages = c(400, 700, 200, 700, 400, 600, 500, 400, 500, 600, 700, 300, 600, 700, 400, 300)
+
+hist(wages, main = "Daily Wages", xlab = "Wages in INR", ylab = "Frequency", col = "pink", freq = TRUE)
+
+```
+
+<br>
+<b>Plot - </b>Plot the above histogram of wages of labourers but with density and density line.
