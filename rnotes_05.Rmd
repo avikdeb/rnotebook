@@ -20,9 +20,8 @@ Author: Avik Deb (avikdeb@gmail.com)
 
 *Mean*
 *Median*
-*Mode* 
 
-R has built-in functions to perform above operations. The missing value is handled in the argument.
+R has built-in functions to perform above operations. The missing value is handled in the argument. There is no built-in function for mode.
 
 ```{r}
 
@@ -41,7 +40,8 @@ mean(x, trim = 0.2)
 mean(y, na.rm = TRUE)
 
 cat("-----------------------------","\n")
-# Calculating median
+
+#Calculating median
 
 x<-c(10, 2, 30, 2, 5, 8, 70, 8, 9, 2)
 y<-c(3,2,3,4,5,NA)
@@ -51,7 +51,13 @@ median(y, na.rm = TRUE)
 
 cat("-----------------------------","\n")
 
+# Calculating the variance and standard deviation
 
+var(x)
+var(y, na.rm = TRUE)
+
+sd(x)
+sd(y, na.rm = TRUE)
 
 ```
 
