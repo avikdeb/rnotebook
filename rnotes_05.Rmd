@@ -1,0 +1,56 @@
+---
+title: "R Workbook 5"
+output: html_notebook
+---
+Author: Avik Deb (avikdeb@gmail.com)
+
+14 November, 2018
+
+<br>
+
+### Day 5
+
+<br>
+
+#### Fundamentals of Statistics
+
+<br>
+
+<b>Measures of Central Tendency - </b> Following are covered here:
+
+*Mean*
+*Median*
+*Mode* 
+
+
+```{r}
+
+
+
+```
+
+<br>
+<b>Dispersion - </b> Following are covered here:
+
+*Variance*
+*Standard Deviation*
+
+```{r}
+
+student.data <- read.csv("student.csv")
+
+print(student.data)
+
+# Getting the highest score i.e. a specific data
+highest.score <- max(student.data$total_score)
+print(highest.score)
+
+# Getting the full record of highest score
+ret.val <- subset(student.data, total_score == max(total_score))
+print(ret.val)
+
+# Getting the best attendance in class 5
+best.attend.5 <- subset(student.data, days_absent == min(days_absent) & class == 5)
+best.attend.5
+
+```
