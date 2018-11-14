@@ -12,7 +12,7 @@ Author: Avik Deb (avikdeb@gmail.com)
 
 <br>
 
-#### Fundamentals of Statistics
+#### Fundamentals of Statistics #1
 
 <br>
 
@@ -22,8 +22,34 @@ Author: Avik Deb (avikdeb@gmail.com)
 *Median*
 *Mode* 
 
+R has built-in functions to perform above operations. The missing value is handled in the argument.
 
 ```{r}
+
+# Calculating means
+
+x<-c(10, 2, 30, 4, 5, 6, 70, 8, 9, 10)
+y<-c(1,2,3,4,5,NA)
+
+# Mean of x
+mean(x)
+
+# Mean of x with trim - used to drop some observations from both end of the sorted vector - 0.2 means remove 2 elements from both ends
+mean(x, trim = 0.2)
+
+# Mean of y - removing the missing values
+mean(y, na.rm = TRUE)
+
+cat("-----------------------------","\n")
+# Calculating median
+
+x<-c(10, 2, 30, 2, 5, 8, 70, 8, 9, 2)
+y<-c(3,2,3,4,5,NA)
+
+median(x)
+median(y, na.rm = TRUE)
+
+cat("-----------------------------","\n")
 
 
 
