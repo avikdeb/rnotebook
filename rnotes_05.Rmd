@@ -16,10 +16,12 @@ Author: Avik Deb (avikdeb@gmail.com)
 
 <br>
 
-<b>Measures of Central Tendency - </b> Following are covered here:
+<b>Measures of Central Tendency and Dispersion - </b> Following are covered here:
 
-*Mean*
-*Median*
+*Mean* (Central Tendency) - 
+*Median* (Central Tendency) - 
+*Variance* (Dispersion) - 
+*Standard Deviation* (Dispersion) -
 
 R has built-in functions to perform above operations. The missing value is handled in the argument. There is no built-in function for mode.
 
@@ -62,11 +64,16 @@ sd(y, na.rm = TRUE)
 ```
 
 <br>
-<b>Dispersion - </b> Following are covered here:
+<b>Binomial Distribution - </b> Used in finding the probability of success of an event which has only two possible outcomes in a series of experiments. It is a discrete probability distribution.
+<br>
+$f(x)=(n/x)p^x(1-p)^{(n-x)}$ where $x=0,1,2,...,n$, $p$ is the probability of a successful trial, $f(x)$ being the probability of having x successful outcomes in an experiment of $n$ independent trials. There are four functions to generate a binomial distribution:
 
-*Variance*
-*Standard Deviation*
+*dbinom(x, size, prob, log = FALSE)*
+*pbinom(q, size, prob, lower.tail = TRUE, log.p = FALSE)*
+*qbinom(p, size, prob, lower.tail = TRUE, log.p = FALSE)*
+*rbinom(n, size, prob)*
 
+where, x,q - vector of quantiles, p - vector of probabilities, n - number of observations, size - number of trials, prob - probability of success on each event.
 ```{r}
 
 student.data <- read.csv("student.csv")
